@@ -1,0 +1,3 @@
+example/second/img_A/1.png example/second/img_B/1.png example/second/mask_A/1.png example/second/mask_B/1.png example/second/bcd_mask/1.png example/second/img_B_synthetic/1.png
+example/second/img_A/2.png example/second/img_B/2.png example/second/mask_A/2.png example/second/mask_B/2.png example/second/bcd_mask/2.png example/second/img_B_synthetic/2.png
+example/second/img_A/3.png example/second/img_B/3.png example/second/mask_A/3.png example/second/mask_B/3.png example/second/bcd_mask/3.png example/second/img_B_synthetic/3.png

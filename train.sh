@@ -1,0 +1,1 @@
+python main.py --base configs/synthesis-wcsdm-lsscd.yaml -t True --gpus "0,"

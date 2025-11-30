@@ -1,0 +1,10 @@
+# Ignore everything under these folders
+/checkpoints/lsscd/*
+/checkpoints/second/*
+/__pycache__/*
+/scripts/__pycache__/*
+/ldm/__pycache__/*
+/ldm/data/__pycache__/*
+/ldm/models/__pycache__/*
+/ldm/modules/__pycache__/*
+/ldm/data/__pycache__/*

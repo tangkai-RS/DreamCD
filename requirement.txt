@@ -1,0 +1,24 @@
+--extra-index-url https://download.pytorch.org/whl/cu111
+
+torch==1.8.1+cu111
+torchvision==0.9.1+cu111
+torchaudio==0.8.1
+
+albumentations==0.4.3
+opencv-python==4.1.2.30
+pudb==2019.2
+imageio==2.9.0
+imageio-ffmpeg==0.4.2
+pytorch-lightning==1.4.2
+omegaconf==2.1.1
+test-tube>=0.7.5
+streamlit>=0.73.1
+einops==0.3.0
+torch-fidelity==0.3.0
+transformers==4.6.0
+torchmetrics==0.6
+kornia==0.5.10
+termcolor==2.1.0
+clip==0.2.0
+taming-transformers==0.0.1
+six

@@ -1,0 +1,46 @@
+[2025-11-29 18:19:31 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:19:31.131425, Script Staring ...
+[2025-11-29 18:20:32 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:20:32.044930, Script Staring ...
+[2025-11-29 18:21:11 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:21:11.987082, Script Staring ...
+[2025-11-29 18:22:47 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:22:47.305470, Script Staring ...
+[2025-11-29 18:23:18 Test] (changeanywhere2_sample.py 143): INFO Time: 2025-11-29 18:23:18.031951, Quick look batch 0 finished:
+content_correlation_scale 0.6541952654711847
+example/second/img_B_gen/1.png
+example/second/img_B_gen/2.png
+example/second/img_B_gen/3.png
+[2025-11-29 18:23:18 Test] (changeanywhere2_sample.py 221): INFO Time: 2025-11-29 18:23:18.035878, Finished!
+[2025-11-29 18:24:55 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:24:55.858493, Script Staring ...
+[2025-11-29 18:25:28 Test] (changeanywhere2_sample.py 143): INFO Time: 2025-11-29 18:25:28.689388, Quick look batch 0 finished:
+content_correlation_scale 0.6541952654711847
+example/second/img_B_synthetic/1.png
+example/second/img_B_synthetic/2.png
+example/second/img_B_synthetic/3.png
+[2025-11-29 18:25:28 Test] (changeanywhere2_sample.py 221): INFO Time: 2025-11-29 18:25:28.692615, Finished!
+[2025-11-29 18:28:58 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:28:58.861787, Script Staring ...
+[2025-11-29 18:29:30 Test] (changeanywhere2_sample.py 143): INFO Time: 2025-11-29 18:29:30.269546, Quick look batch 0 finished:
+content_correlation_scale 0.6541952654711847
+example/second/img_B_synthetic/1.png
+example/second/img_B_synthetic/2.png
+example/second/img_B_synthetic/3.png
+[2025-11-29 18:29:30 Test] (changeanywhere2_sample.py 221): INFO Time: 2025-11-29 18:29:30.272626, Finished!
+[2025-11-29 18:30:12 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:30:12.152088, Script Staring ...
+[2025-11-29 18:30:43 Test] (changeanywhere2_sample.py 143): INFO Time: 2025-11-29 18:30:43.433334, Quick look batch 0 finished:
+content_correlation_scale 0.6541952654711847
+example/second/img_B_synthetic/1.png
+example/second/img_B_synthetic/2.png
+example/second/img_B_synthetic/3.png
+[2025-11-29 18:30:43 Test] (changeanywhere2_sample.py 221): INFO Time: 2025-11-29 18:30:43.436436, Finished!
+[2025-11-29 18:31:20 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:31:20.219659, Script Staring ...
+[2025-11-29 18:31:26 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:31:26.467987, Script Staring ...
+[2025-11-29 18:31:57 Test] (changeanywhere2_sample.py 143): INFO Time: 2025-11-29 18:31:57.386518, Quick look batch 0 finished:
+content_correlation_scale 0.7406464491033885
+example/second/img_B_synthetic/1.png
+example/second/img_B_synthetic/2.png
+example/second/img_B_synthetic/3.png
+[2025-11-29 18:31:57 Test] (changeanywhere2_sample.py 221): INFO Time: 2025-11-29 18:31:57.389962, Finished!
+[2025-11-29 18:33:11 Test] (changeanywhere2_sample.py 206): INFO Time: 2025-11-29 18:33:11.925635, Script Staring ...
+[2025-11-29 18:33:55 Test] (changeanywhere2_sample.py 143): INFO Time: 2025-11-29 18:33:55.536817, Quick look batch 0 finished:
+content_correlation_scale 0.7406464491033885
+example/second/img_B_synthetic/1.png
+example/second/img_B_synthetic/2.png
+example/second/img_B_synthetic/3.png
+[2025-11-29 18:33:55 Test] (changeanywhere2_sample.py 221): INFO Time: 2025-11-29 18:33:55.541245, Finished!

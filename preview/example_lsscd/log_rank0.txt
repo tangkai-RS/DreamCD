@@ -1,0 +1,30 @@
+[2025-11-29 18:39:16 Test] (changeanywhere2_sample.py 184): INFO Time: 2025-11-29 18:39:16.297754, Script Staring ...
+[2025-11-29 18:40:02 Test] (changeanywhere2_sample.py 184): INFO Time: 2025-11-29 18:40:02.084546, Script Staring ...
+[2025-11-29 18:40:38 Test] (changeanywhere2_sample.py 184): INFO Time: 2025-11-29 18:40:38.627154, Script Staring ...
+[2025-11-29 18:41:08 Test] (changeanywhere2_sample.py 143): INFO Time: 2025-11-29 18:41:08.674271, Quick look batch 0 finished:
+content_correlation_scale 0.7406464491033885
+example/lsscd/img_B_synthetic/1.png
+example/lsscd/img_B_synthetic/2.png
+example/lsscd/img_B_synthetic/3.png
+[2025-11-29 18:41:08 Test] (changeanywhere2_sample.py 199): INFO Time: 2025-11-29 18:41:08.677516, Finished!
+[2025-11-29 18:42:20 Test] (changeanywhere2_synthesis.py 184): INFO Time: 2025-11-29 18:42:20.815410, Script Staring ...
+[2025-11-29 18:42:51 Test] (changeanywhere2_synthesis.py 143): INFO Time: 2025-11-29 18:42:51.859603, Quick look batch 0 finished:
+content_correlation_scale 0.7406464491033885
+example/lsscd/img_B_synthetic/1.png
+example/lsscd/img_B_synthetic/2.png
+example/lsscd/img_B_synthetic/3.png
+[2025-11-29 18:42:51 Test] (changeanywhere2_synthesis.py 199): INFO Time: 2025-11-29 18:42:51.864787, Finished!
+[2025-11-29 18:49:44 Test] (changeanywhere2_synthesis.py 184): INFO Time: 2025-11-29 18:49:44.454292, Script Staring ...
+[2025-11-29 18:50:15 Test] (changeanywhere2_synthesis.py 143): INFO Time: 2025-11-29 18:50:15.105530, Quick look batch 0 finished:
+content_correlation_scale 0.7406464491033885
+example/lsscd/img_B_synthetic/1.png
+example/lsscd/img_B_synthetic/2.png
+example/lsscd/img_B_synthetic/3.png
+[2025-11-29 18:50:15 Test] (changeanywhere2_synthesis.py 199): INFO Time: 2025-11-29 18:50:15.108431, Finished!
+[2025-11-29 18:50:42 Test] (changeanywhere2_synthesis.py 184): INFO Time: 2025-11-29 18:50:42.755213, Script Staring ...
+[2025-11-29 18:51:14 Test] (changeanywhere2_synthesis.py 143): INFO Time: 2025-11-29 18:51:14.180996, Quick look batch 0 finished:
+content_correlation_scale 0.7406464491033885
+example/lsscd/img_B_synthetic/1.png
+example/lsscd/img_B_synthetic/2.png
+example/lsscd/img_B_synthetic/3.png
+[2025-11-29 18:51:14 Test] (changeanywhere2_synthesis.py 199): INFO Time: 2025-11-29 18:51:14.185559, Finished!
