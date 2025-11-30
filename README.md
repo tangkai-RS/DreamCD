@@ -1,13 +1,8 @@
 ## DreamCD: A change-label-free framework for change detection via a weakly conditional semantic diffusion model in optical VHR imagery
 
-
----
-
 ## 📰 News
 
 - **[2025-11-30]** We have released a synthetic demo for DreamCD. The rest of the code will be released after peer review.
-
----
 
 ## 🚀Hightlights 
 
@@ -16,8 +11,6 @@
 3.	Incorporates bi-temporal style differences into change image synthesis.
 4.	Introduces a large-scale semantic change detection dataset, LsSCD-Ex.
 5.	Achieves state-of-the-art unsupervised accuracy on SECOND and LsSCD-Ex datasets.
-
----
 
 ## 📚LsSCD-Ex dataset download link
 
