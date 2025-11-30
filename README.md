@@ -1,13 +1,8 @@
 ## DreamCD: A change-label-free framework for change detection via a weakly conditional semantic diffusion model in optical VHR imagery
 
-
----
-
 ## 📰 News
 
 - **[2025-11-30]** We have released a synthetic demo for DreamCD. The rest of the code will be released after peer review.
-
----
 
 ## 🚀Hightlights 
 
@@ -17,12 +12,8 @@
 4.	Introduces a large-scale semantic change detection dataset, LsSCD-Ex.
 5.	Achieves state-of-the-art unsupervised accuracy on SECOND and LsSCD-Ex datasets.
 
----
-
 ## 📚LsSCD-Ex dataset download link
-
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.17765755-blue)](https://doi.org/10.5281/zenodo.17765755)
-
+[[Download link]](https://doi.org/10.5281/zenodo.17765755) 
 **Note**: Access will be publicly available after peer review.
 
 ## 📦Getting Started
@@ -37,7 +28,8 @@ pip install -r requirement.txt
 ```
 
 ### Step.2 Download pre-trained checkpoints
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-tangkaii/DreamCD-yellow.svg?logo=huggingface)](https://huggingface.co/tangkaii/DreamCD)
+
+[[Download link]](https://huggingface.co/tangkaii/DreamCD)
 
 After downloading the checkpoints of diffusion models and placing it in the folder `./checkpoints/`, please follow the directory structure below:  
 

@@ -585,7 +585,7 @@ class LatentDiffusion(DDPM):
             assert hasattr(self.cond_stage_model, self.cond_stage_forward)
             c = getattr(self.cond_stage_model, self.cond_stage_forward)(c)
             
-        if self.noise_cond: # TODO: mod by tk, noise condition
+        if self.noise_cond:
             # if t is not None:
             #     c = self._add_cond_noise(c, t)
             # else:
@@ -704,7 +704,7 @@ class LatentDiffusion(DDPM):
                     cond_key1, cond_key2 = cond_key.split("_")
                     xc1 = super().get_input(batch, cond_key1).to(self.device) # xc1 rep style condition
                     xc2 = super().get_input(batch, cond_key2).to(self.device) # xc2 rep semantic condition
-                    xc = dict(c_concat=xc1, c_crossattn=xc2) # TODO: mod by tk
+                    xc = dict(c_concat=xc1, c_crossattn=xc2)
                 else:
                     xc = super().get_input(batch, cond_key).to(self.device)
             else:

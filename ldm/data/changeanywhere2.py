@@ -96,7 +96,6 @@ class ChangeAnywhereBase(Dataset):
             change_mask_orig = (label_A == label_B).astype(np.uint8)
             # change_mask = np.zeros_like(change_mask).astype(np.uint8)
             # change_mask_orig = np.zeros_like(change_mask).astype(np.uint8)
-            # TODO: mod!!!!
             # change_mask_orig = np.asarray(Image.open(sample["change_mask_path"])).astype(np.uint8) # single channel for change mask
             # change_mask_orig = np.where(change_mask_orig==255, 0, 1)
         else:

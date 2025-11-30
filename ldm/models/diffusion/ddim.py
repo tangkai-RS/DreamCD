@@ -173,25 +173,18 @@ class DDIMSampler(object):
         if with_adain:
             assert (x0 is not None) and (x0_style is not None) , "Error: 'x0_style' must be provided when 'with_adain' is True."
             x0 = self.adain(x0, x0_style)    
-            # x0 = self.change_adain(x0, x0_style, mask) 
-            # x0 = self.cluster_wise_adain(x0, x0_style, label_A_ds, label_B_ds) 
 
         i_change = int(total_steps * content_correlation_scale) # TODO: test this
         for i, step in enumerate(iterator):
             index = total_steps - i - 1
             ts = torch.full((b,), step, device=device, dtype=torch.long)            
             
-            # if self.noise_cond: # TODO: mod by tk, noise condition
-            #     cond = self._add_cond_noise(cond, step)
-
             if mask is not None:
                 assert x0 is not None
                 img_orig = self.model.q_sample(x0, ts)
                 if with_adain:
                     img_style = self.model.q_sample(x0_style, ts)
                     img_orig = self.adain(img_orig, img_style)    
-                    # img_orig = self.change_adain(img_orig, img_style, mask) 
-                    # img_orig = self.cluster_wise_adain(img_orig, img_style, label_A_ds, label_B_ds) 
                 
                 # using inversion to adjust the std and mean of img_orig (Consistent with q_sample but time-consuming)
                 # if with_adain and i == 0:
@@ -205,11 +198,6 @@ class DDIMSampler(object):
                     p = torch.FloatTensor([0.]).to(device)
                     background_random_prob = torch.full(shape, float(p)).float().to(device)  
                 img = img_orig * mask * (1. - background_random_prob) + img * mask * background_random_prob + (1. - mask) * img
-                # TODO: AdaIN using image of another time during sampling step by step
-                # TODO: plan A, qsample t2 image using Markov, worser~, depending on the content_correlation_scale=1
-                # TODO: plan B, qsample t2 image using ddim inversion, 
-                # maybe better, because of the prediction of DDIM has certainty compared with the Markov calculation with random noise addition
-                # cluster-wise-AdaIn
                   
             outs = self.p_sample_ddim(img, cond, ts, index=index, use_original_steps=ddim_use_original_steps,
                                       quantize_denoised=quantize_denoised, temperature=temperature,
@@ -226,77 +214,9 @@ class DDIMSampler(object):
                 intermediates['pred_x0'].append(pred_x0)
         if with_adain:
             img = self.adain(img, x0_style)
-            # img = self.change_adain(img, x0_style, mask)
-            # img = self.cluster_wise_adain(img, x0_style, label_A_ds, label_B_ds)  
+            
         return img, intermediates
-    '''
-    # for ChangeAnywhere1
-    @torch.no_grad()
-    def ddim_sampling(self, cond, shape, label_B_ds=None,
-                      x_T=None, ddim_use_original_steps=False,
-                      callback=None, timesteps=None, quantize_denoised=False,
-                      mask=None, x0=None, img_callback=None, log_every_t=100,
-                      temperature=1., noise_dropout=0., score_corrector=None, corrector_kwargs=None,
-                      unconditional_guidance_scale=1., unconditional_conditioning=None, change_background=False):
-        device = self.model.betas.device
-        b = shape[0]
-        if x_T is None:
-            img = torch.randn(shape, device=device)
-        else:
-            img = x_T
 
-        if timesteps is None:
-            timesteps = self.ddpm_num_timesteps if ddim_use_original_steps else self.ddim_timesteps
-        elif timesteps is not None and not ddim_use_original_steps:
-            subset_end = int(min(timesteps / self.ddim_timesteps.shape[0], 1) * self.ddim_timesteps.shape[0]) - 1
-            timesteps = self.ddim_timesteps[:subset_end]
-
-        intermediates = {'x_inter': [img], 'pred_x0': [img]}
-        time_range = reversed(range(0,timesteps)) if ddim_use_original_steps else np.flip(timesteps)
-        total_steps = timesteps if ddim_use_original_steps else timesteps.shape[0]
-        # print(f"Running DDIM Sampling with {total_steps} timesteps")
-
-        iterator = tqdm(time_range, desc='DDIM Sampler', total=total_steps, disable=True)
-        
-        i_change = np.random.randint(30, 45) # 30 45
-        for i, step in enumerate(iterator):
-            index = total_steps - i - 1
-            ts = torch.full((b,), step, device=device, dtype=torch.long)
-
-            if mask is not None:
-                assert x0 is not None
-                img_orig = self.model.q_sample(x0, ts)
-                if change_background and (i >= i_change):
-                    p = torch.FloatTensor([1.]).to(device) # 0-背景不变 1-背景随机
-                    background_random_prob = torch.full(shape, float(p)).float().to(device) 
-                    # 建筑/道路区域（label=7）且不变区域（mask=1）的mask_random_prob = 0 只给少数步随机，如48, 49
-                    if (label_B_ds is not None) and (i <= 47):
-                        m_building = (label_B_ds == 7) & (mask == 1)
-                        m_road = (label_B_ds == 3) & (mask == 1)
-                        m = m_building | m_road
-                        m = m.expand(-1, 3, -1, -1)
-                        background_random_prob[m] = 0.
-                else:
-                    p = torch.FloatTensor([0.]).to(device)
-                    background_random_prob = torch.full(shape, float(p)).float().to(device)  
-                img = img_orig * mask * (1. - background_random_prob) + img * mask * background_random_prob + (1. - mask) * img
-                
-            outs = self.p_sample_ddim(img, cond, ts, index=index, use_original_steps=ddim_use_original_steps,
-                                      quantize_denoised=quantize_denoised, temperature=temperature,
-                                      noise_dropout=noise_dropout, score_corrector=score_corrector,
-                                      corrector_kwargs=corrector_kwargs,
-                                      unconditional_guidance_scale=unconditional_guidance_scale,
-                                      unconditional_conditioning=unconditional_conditioning, change_background=change_background)
-            img, pred_x0 = outs
-            if callback: callback(i)
-            if img_callback: img_callback(pred_x0, i)
-
-            if index % log_every_t == 0 or index == total_steps - 1:
-                intermediates['x_inter'].append(img)
-                intermediates['pred_x0'].append(pred_x0)
-        return img, intermediates
-    '''
-    
     @torch.no_grad()
     def p_sample_ddim(self, x, c, t, index, repeat_noise=False, use_original_steps=False, quantize_denoised=False,
                       temperature=1., noise_dropout=0., score_corrector=None, corrector_kwargs=None,
@@ -364,7 +284,6 @@ class DDIMSampler(object):
             cluster_normalized_feat = (content_feat - content_mean) / content_std
             cluster_normalized_feat = cluster_normalized_feat * style_std + style_mean
             
-            # TODO: check 为什么content_mask不起作用？ 把inf传进来了
             normalized_feat[content_mask.long()] = cluster_normalized_feat[content_mask.long()]
         return normalized_feat
 
