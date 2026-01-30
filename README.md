@@ -81,6 +81,7 @@ Folder ```preview``` lets you quickly browse results.
 </div>
 
 ## Citation
+If you use the DreamCD code or the LsSCD-Ex dataset, please cite the following.
 ```bibtex
 @article{tang2026dreamcd,
   title   = {DreamCD: A Change-Label-Free Framework for Change Detection via a Weakly Conditional Semantic Diffusion Model in Optical VHR Imagery},
