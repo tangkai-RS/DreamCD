@@ -1,7 +1,7 @@
 ## DreamCD: A change-label-free framework for change detection via a weakly conditional semantic diffusion model in optical VHR imagery
 
 ## 📰 News
-
+- **[2026-01-30]** DreamCD has been accepted by the [JAG](https://doi.org/10.1016/j.jag.2026.105125).
 - **[2025-11-30]** We have released a synthetic demo for DreamCD. The rest of the code will be released after peer review.
 
 ## 🚀Hightlights 
