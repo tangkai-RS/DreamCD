@@ -14,7 +14,10 @@
 
 ## 📚LsSCD-Ex dataset download link
 [[Download link]](https://doi.org/10.5281/zenodo.17765755) 
-**Note**: Access will be publicly available after peer review.
+**Note**: If you need the original, uncropped large-scale TIFF imagery, please contact us (tangkai@mail.bnu.edu.cn) to obtain the download link.
+<div align="center">
+  <img src="figs/LsSCD-Ex.png" width="80%">
+</div>
 
 ## 📦Getting Started
 
@@ -76,3 +79,17 @@ Folder ```preview``` lets you quickly browse results.
 <div align="center">
   <img src="preview/example_lsscd/0_change_mask.png" width="60%">
 </div>
+
+## Citation
+```bibtex
+@article{tang2026dreamcd,
+  title   = {DreamCD: A Change-Label-Free Framework for Change Detection via a Weakly Conditional Semantic Diffusion Model in Optical VHR Imagery},
+  author  = {Tang, Kai and Zheng, Zhuo and Chen, Hongruixuan and Chen, Xuehong and Chen, Jin},
+  journal = {International Journal of Applied Earth Observation and Geoinformation},
+  volume  = {146},
+  pages   = {105125},
+  year    = {2026},
+  issn    = {1569-8432},
+  doi     = {10.1016/j.jag.2026.105125},
+}
+```
